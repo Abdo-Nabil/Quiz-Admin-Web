@@ -1,0 +1,67 @@
+{
+  "appName": "Quiz App",
+  "notFoundPage": "Sorry, but the page is not found!",
+  "done": "Done",
+  "title1": "Finish Your Quizzes",
+  "description1": "Start solving questions and enjoy getting high marks!",
+  "login": "LOGIN",
+  "dontHaveAccount": "Don't have account? ",
+  "registerNow": "REGISTER NOW!",
+  "loginNow": "LOGIN NOW!",
+  "registerANewUser": "Register a new user",
+  "alreadyHaveAccount": "Already have an account? ",
+  "register": "REGISTER",
+  "twoPasswordsNotIdentical": "  Two passwords are not identical",
+  "loading": "Loading",
+  "alert": "Alert",
+  "internetConnectionError": "Please, check your internet connection!",
+  "someThingWentWrong": "Sorry, something went wrong!",
+  "ok": "Ok",
+  "emptyValue": "Fields Can't be empty",
+  "savingTokenError": "Sorry, error while saving token!",
+  "removingTokenError": "Sorry, error while removing token!",
+  "signOut": "Sign out",
+  "email": "Email",
+  "password": "Password",
+  "reenterPassword": "Re-enter password",
+  "name": "Name",
+  "notFound": "Not found!",
+  "invalidEmail": "Invalid email",
+  "notValidValue": "Not valid value",
+  "weakPassword": "Sorry, you entered a weak password",
+  "emailInUse": "Sorry, your email is already used",
+  "userNotFound": "Sorry, no user found with these data",
+  "wrongPassword": "Sorry, your password is wrong",
+  "passwordMustBe": "Password must be 5 or more",
+  "hello": "Hello",
+  "availableQuizzes": "Available Quizzes",
+  "retry": "Retry",
+  "startQuizNow": "Do you want to start quiz now?",
+  "areYouSure": "Are you sure?",
+  "cancel": "Cancel",
+  "finishQuiz": "Do you want to end the quiz and get your score?",
+  "timeOut": "Timeout!",
+  "quizTimeEnded": "Quiz time has been ended!!",
+  "toHomeScreen": "Back to home screen",
+  "minute": "min",
+  "score": "Score",
+  "question": "Question",
+  "updateApp": "Please, update the app to last version.",
+  "update": "Update",
+  "youAreBlocked": "You Are Blocked, please contact app creator.",
+  "contact": "Contact",
+  "canotLaunch": "Can't Launch",
+  "finish": "Finish",
+
+
+
+
+
+
+
+  "quizAdmin": "Quiz admin"
+
+
+
+
+}

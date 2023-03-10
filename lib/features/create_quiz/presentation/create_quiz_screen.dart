@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_admin/core/extensions/string_extension.dart';
 import 'package:quiz_admin/core/shared/components/add_vertical_space.dart';
 import 'package:quiz_admin/core/util/navigator_helper.dart';
 import 'package:quiz_admin/features/authentication/presentation/widgets/custom_button.dart';
-import 'package:quiz_admin/features/create_quiz/presentation/components/build_app_bar.dart';
+import 'package:quiz_admin/core/shared/components/build_app_bar.dart';
 import 'package:quiz_admin/features/create_quiz/presentation/components/question_container.dart';
 import 'package:quiz_admin/features/home_screen/services/models/quiz_model.dart';
 import 'package:quiz_admin/resources/colors_manager.dart';
@@ -101,24 +102,27 @@ class _CreateQuizScreenState extends State<CreateQuizScreen> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const CustomText(AppStrings.quizName),
+                                      CustomText(
+                                          AppStrings.quizName.tr(context)),
                                       RoundedTextField(
                                           controller: createQuizCubit
                                               .quizNameController,
                                           validate: (value) {
                                             return CreateQuizCubit.getInst(
                                                     context)
-                                                .validateNotEmpty(value);
+                                                .validateNotEmpty(
+                                                    context, value);
                                           }),
                                       const AddVerticalSpace(AppPadding.p16),
-                                      const CustomText(AppStrings.quizDuration),
+                                      CustomText(
+                                          AppStrings.quizDuration.tr(context)),
                                       RoundedTextField(
                                         controller: createQuizCubit
                                             .quizDurationController,
                                         validate: (value) {
                                           return CreateQuizCubit.getInst(
                                                   context)
-                                              .validateIsNumber(value);
+                                              .validateIsNumber(context, value);
                                         },
                                       ),
                                     ],
@@ -142,14 +146,14 @@ class _CreateQuizScreenState extends State<CreateQuizScreen> {
                                 const AddVerticalSpace(AppPadding.p32),
                                 widget.editedQuiz == null
                                     ? CustomButton(
-                                        text: AppStrings.createQuiz,
+                                        text: AppStrings.createQuiz.tr(context),
                                         onTap: () {
                                           CreateQuizCubit.getInst(context)
                                               .createQuiz();
                                         },
                                       )
                                     : CustomButton(
-                                        text: AppStrings.editQuiz,
+                                        text: AppStrings.editQuiz.tr(context),
                                         onTap: () {
                                           CreateQuizCubit.getInst(context)
                                               .editQuiz(widget.editedQuiz!);

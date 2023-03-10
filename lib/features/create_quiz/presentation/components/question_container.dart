@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_admin/core/extensions/string_extension.dart';
 import 'package:quiz_admin/features/create_quiz/cubits/create_quiz_cubit.dart';
 
 import '../../../../core/shared/components/add_horizontal_space.dart';
@@ -28,11 +29,12 @@ class QuestionContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText('${AppStrings.question} ${index + 1}'),
+            CustomText('${AppStrings.question.tr(context)} ${index + 1}'),
             RoundedTextField(
               controller: createQuizCubit.questionsControllers[index],
               validate: (value) {
-                return CreateQuizCubit.getInst(context).validateNotEmpty(value);
+                return CreateQuizCubit.getInst(context)
+                    .validateNotEmpty(context, value);
               },
             ),
             Padding(
@@ -41,7 +43,7 @@ class QuestionContainer extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const CustomText(AppStrings.choices),
+                  CustomText(AppStrings.choices.tr(context)),
                   Row(
                     children: [
                       CircleAvatar(
@@ -102,7 +104,7 @@ class QuestionContainer extends StatelessWidget {
                                       .choicesControllers[index][z],
                                   validate: (value) {
                                     return CreateQuizCubit.getInst(context)
-                                        .validateNotEmpty(value);
+                                        .validateNotEmpty(context, value);
                                   },
                                 ),
                               ),
@@ -115,13 +117,13 @@ class QuestionContainer extends StatelessWidget {
                 ),
               ),
             ),
-            const CustomText(AppStrings.correctAnswer),
+            CustomText(AppStrings.correctAnswer.tr(context)),
             RoundedTextField(
                 controller: createQuizCubit.correctAnswersControllers[index],
                 isGreenBorder: true,
                 validate: (value) {
                   return CreateQuizCubit.getInst(context)
-                      .validateCorrectAnswer(value, index);
+                      .validateCorrectAnswer(context, value, index);
                 }),
           ],
         ),

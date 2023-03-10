@@ -7,7 +7,7 @@ import '../../../core/shared/components/error_bloc.dart';
 import '../../../core/util/dialog_helper.dart';
 import '../../../core/util/toast_helper.dart';
 import '../../authentication/services/models/user_model.dart';
-import '../../create_quiz/presentation/components/build_app_bar.dart';
+import '../../../core/shared/components/build_app_bar.dart';
 import '../cubits/home_screen_cubit.dart';
 import 'components/body.dart';
 

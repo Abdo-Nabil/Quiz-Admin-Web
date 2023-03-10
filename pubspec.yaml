@@ -55,7 +55,7 @@ dependencies:
   #  geolocator: ^9.0.1
   http:
   get_it:
-  shared_preferences:
+  shared_preferences: 2.0.6
 #  internet_connection_checker:
   email_validator:
   url_launcher:

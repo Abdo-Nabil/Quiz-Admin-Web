@@ -32,7 +32,7 @@ class AvailableQuizzes extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(AppPadding.p8),
               child: Text(
-                AppStrings.createQuiz,
+                AppStrings.createQuiz.tr(context),
                 style: TextStyle(
                   fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
                 ),

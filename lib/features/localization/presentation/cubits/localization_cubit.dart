@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:ui';
-import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +21,7 @@ class LocalizationCubit extends Cubit<LocalizationState> {
   static LocalizationCubit getIns(context) {
     return BlocProvider.of<LocalizationCubit>(context);
   }
+
   getLocale() {
     final String? jsonString =
         sharedPreferences.getString(AppStrings.storedLocale);
@@ -52,11 +52,23 @@ class LocalizationCubit extends Cubit<LocalizationState> {
     emit(LocalizationSuccessState(locale: locale));
   }
 
-  //The system (mobile) language
+  onLanguageChanged(value) {
+    if (value) {
+      setLocale(AppLocalizationsSetup.supportedLocales[0]); // English
+    } else {
+      setLocale(AppLocalizationsSetup.supportedLocales[1]); // Arabic
+    }
+  }
+
+  //The system (Web,mobile) language
   Locale _getDeviceLocale() {
-    final String result = Platform.localeName; //like en_US or ar_EG
-    final String localeString = result.split('_').first;
-    return Locale(localeString);
+    // final String result = Platform.localeName; //like en_US or ar_EG
+    // final String localeString = result.split('_').first;
+    // return Locale(localeString);
+    //
+    Locale locale = window.locale;
+    return locale;
+    // return Locale('ar');
   }
 
   void _setSystemLocaleIfFound({required bool emitState}) {

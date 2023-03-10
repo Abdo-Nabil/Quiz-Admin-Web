@@ -42,7 +42,7 @@ class QuizTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: AppPadding.p16),
         child: Container(
           width: double.infinity,
-          height: 80,
+          height: 90,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppPadding.p16),
@@ -114,7 +114,7 @@ class QuizTile extends StatelessWidget {
                         onPressed: () {
                           DialogHelper.messageWithActionsDialog(
                             context,
-                            AppStrings.deleteQuiz,
+                            AppStrings.deleteQuiz.tr(context),
                             () {
                               HomeScreenCubit.getIns(context)
                                   .deleteQuiz(quizModel.quizId);

@@ -6,6 +6,7 @@ import 'package:quiz_admin/features/home_screen/presentation/home_screen.dart';
 import 'package:quiz_admin/resources/app_strings.dart';
 
 import 'features/authentication/cubits/auth_cubit.dart';
+import 'features/authentication/presentation/login_screen.dart';
 import 'features/general/cubits/general_cubit.dart';
 import 'features/home_screen/cubits/home_screen_cubit.dart';
 import 'features/localization/locale/app_localizations_setup.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => sl<LocalizationCubit>()),
+        BlocProvider(create: (context) => sl<LocalizationCubit>()..getLocale()),
         BlocProvider(create: (context) => sl<ThemeCubit>()..getTheme()),
         BlocProvider(create: (context) => sl<GeneralCubit>()),
         BlocProvider(create: (context) => sl<AuthCubit>()),
@@ -39,9 +40,9 @@ class MyApp extends StatelessWidget {
           return BlocBuilder<ThemeCubit, ThemeState>(
             builder: (context, state) {
               //
-              const Locale selectedLocale = Locale('en');
-              // final Locale selectedLocale =
-              //     BlocProvider.of<LocalizationCubit>(context).selectedLocale;
+              // const Locale selectedLocale = Locale('en');
+              final Locale selectedLocale =
+                  BlocProvider.of<LocalizationCubit>(context).selectedLocale;
               final ThemeMode selectedThemeMode =
                   BlocProvider.of<ThemeCubit>(context).selectedThemeMode;
 

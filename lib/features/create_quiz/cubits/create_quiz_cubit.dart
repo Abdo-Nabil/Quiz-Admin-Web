@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_admin/core/error/failures.dart';
+import 'package:quiz_admin/core/extensions/string_extension.dart';
 import 'package:quiz_admin/features/general/services/general_repo.dart';
 import 'package:quiz_admin/features/home_screen/services/models/quiz_model.dart';
 
@@ -196,25 +197,25 @@ class CreateQuizCubit extends Cubit<CreateQuizState> {
     );
   }
 
-  validateNotEmpty(String value) {
+  validateNotEmpty(BuildContext context, String value) {
     if (value.isEmpty) {
-      return AppStrings.fieldCantBeEmpty;
+      return AppStrings.emptyValue.tr(context);
     }
     return null;
   }
 
-  validateIsNumber(String value) {
+  validateIsNumber(BuildContext context, String value) {
     if (int.tryParse(value) == null) {
-      return AppStrings.enterANumber;
+      return AppStrings.enterANumber.tr(context);
     } else if (int.parse(value) <= 0) {
       return AppStrings.enterPositiveNum;
     }
     return null;
   }
 
-  validateCorrectAnswer(String value, int questionIndex) {
+  validateCorrectAnswer(BuildContext context, String value, int questionIndex) {
     if (value.isEmpty) {
-      return AppStrings.fieldCantBeEmpty;
+      return AppStrings.emptyValue.tr(context);
     } else {
       bool isFound = false;
 
@@ -227,7 +228,7 @@ class CreateQuizCubit extends Cubit<CreateQuizState> {
         }
       }
       if (!isFound) {
-        return AppStrings.correctAnsMustBeOneOfChoices;
+        return AppStrings.correctAnsMustBeOneOfChoices.tr(context);
       }
     }
     return null;

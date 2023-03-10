@@ -13,7 +13,7 @@ import '../../../core/util/dialog_helper.dart';
 import '../../../core/util/navigator_helper.dart';
 import '../../../resources/app_margins_paddings.dart';
 import '../../../resources/app_strings.dart';
-import '../../create_quiz/presentation/components/build_app_bar.dart';
+import '../../../core/shared/components/build_app_bar.dart';
 import '../../home_screen/presentation/home_screen.dart';
 import '../cubits/auth_cubit.dart';
 
@@ -90,7 +90,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             const LoginOrRegisterText(AppStrings.login),
                             const AddVerticalSpace(AppPadding.p20),
                             Padding(
-                              padding: const EdgeInsets.all(AppPadding.p16),
+                              padding: const EdgeInsets.fromLTRB(
+                                AppPadding.p16,
+                                AppPadding.p16,
+                                AppPadding.p16,
+                                AppPadding.p32,
+                              ),
                               child: Form(
                                 key: _formKey,
                                 child: Column(

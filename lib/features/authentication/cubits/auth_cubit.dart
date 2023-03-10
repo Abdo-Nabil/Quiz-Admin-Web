@@ -56,15 +56,6 @@ class AuthCubit extends Cubit<AuthState> {
     return null;
   }
 
-  validateSecondPassword(BuildContext context, String value, String firstPass) {
-    if (value.isEmpty) {
-      return AppStrings.emptyValue.tr(context);
-    }
-    if (value != firstPass) {
-      return AppStrings.twoPasswordsNotIdentical.tr(context);
-    }
-    return null;
-  }
 
   Future login(
       String email, String password, GlobalKey<FormState> formKey) async {

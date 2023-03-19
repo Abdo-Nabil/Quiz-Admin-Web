@@ -99,7 +99,7 @@ class QuizTile extends StatelessWidget {
                       onLongPress: () {},
                       child: IconButton(
                         onPressed: () {
-                          NavigatorHelper.pushReplacement(
+                          NavigatorHelper.push(
                               context,
                               CreateQuizScreen(
                                 editedQuiz: quizModel,

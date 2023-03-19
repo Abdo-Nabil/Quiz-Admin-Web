@@ -60,10 +60,7 @@ class MyApp extends StatelessWidget {
                 //     AppLocalizationsSetup.localeResolutionCallback,
                 localizationsDelegates:
                     AppLocalizationsSetup.localizationsDelegates,
-                // home: initialScreen,
-                // home: LoginScreen(),
-                // home: CreateQuizScreen(),
-                home: HomeScreen(),
+                home: const LoginScreen(),
               );
             },
           );

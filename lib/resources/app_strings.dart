@@ -72,7 +72,7 @@ class AppStrings {
   //-----------------------------------------------
 
   //------------------------others-----------------------
-  static const String appNameForRecentApp = "Quiz admin";
+  static const String appNameForRecentApp = "Quiz Admin";
   static const String canotLaunch = 'canotLaunch';
   //
   static const String notFoundPage = "notFoundPage";
